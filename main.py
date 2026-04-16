@@ -1,7 +1,12 @@
 from pytubefix import YouTube, Playlist
 
 
-# if not working: pip install --upgrade pytubefix
+# 1. if not working: pip install --upgrade pytubefix
+# 2. still not working? add or remove oauth on download_youtube_video
+# 3. still nothing? try
+# import os
+# os.system(f'yt-dlp "{url}"')
+
 
 def clean_str(s: str) -> str:
     return ''.join(c for c in s if c.isalnum() or c.isspace())
@@ -17,7 +22,8 @@ def print_video_info(do_print: bool, print_prefix: str, video_len: int, video_ur
 
 
 def download_youtube_video(video_url: str, filename: str | None = None):
-    video: YouTube = YouTube(video_url, use_oauth=True, allow_oauth_cache=True)
+    # video: YouTube = YouTube(video_url, use_oauth=True, allow_oauth_cache=True)
+    video: YouTube = YouTube(video_url)
     filename = filename if filename else clean_str(video.title) + '.mp4'
     video.streams.get_highest_resolution().download(filename=filename)
     print_video_info(True, 'Downloaded', video.length, video_url, filename)
@@ -61,13 +67,13 @@ def download_youtube_playlist(playlist_url: str):
         do_print=True,  # True-defaulted
         do_download=True,  # True-defaulted
         reverse_order=False,  # False-defaulted
-        prefix_min=None,  # None-defaulted, included, eg '002-'
-        prefix_max=None  # None-defaulted, included, eg '004-'
+        prefix_min='041-',  # None-defaulted, included, eg '002-'
+        prefix_max='051-'  # None-defaulted, included, eg '004-'
     )
 
 
-# Video - in28minutes - Learning Path 01 - Spring and Spring Boot Web Applications and REST API Developer - LP
-# download_youtube_video('https://www.youtube.com/watch?v=W_E6iSTBqNs&list=PLBBog2r6uMCTM_CKntPT-GIMR2-4d55Un&index=2')
+# Playlist - Joe Dispenza - Mind Insider
+# download_youtube_playlist('https://www.youtube.com/watch?v=wLsaBmrkYMQ&list=PLMhxh4YcRFWxuB0Kqxrb47p3x_kZgEwQ3')
 
-# Playlist - in28minutes - Learning Paths - Java Spring Boot Full Stack Cloud and Microservices
-download_youtube_playlist('https://www.youtube.com/watch?v=W_E6iSTBqNs&list=PLBBog2r6uMCTM_CKntPT-GIMR2-4d55Un')
+# Theta Billionaire Brain Wave: Activate Wealth and Success Mindset
+download_youtube_video('https://www.youtube.com/watch?v=HQwYA3G5bSU&list=RDHQwYA3G5bSU&start_radio=1')
