@@ -75,5 +75,5 @@ def download_youtube_playlist(playlist_url: str):
 # Playlist - Joe Dispenza - Mind Insider
 # download_youtube_playlist('https://www.youtube.com/watch?v=wLsaBmrkYMQ&list=PLMhxh4YcRFWxuB0Kqxrb47p3x_kZgEwQ3')
 
-# Theta Billionaire Brain Wave: Activate Wealth and Success Mindset
-download_youtube_video('https://www.youtube.com/watch?v=HQwYA3G5bSU&list=RDHQwYA3G5bSU&start_radio=1')
+# Bashar: The Fastest Way to Shift Your Life
+download_youtube_video('https://www.youtube.com/watch?v=KIKPTPNfbx4')
