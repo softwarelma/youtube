@@ -140,4 +140,4 @@ def download_youtube_channel(channel_url: str, do_auth: bool):
 # download_youtube_playlist('https://www.youtube.com/watch?v=ws2e9kmfzzw&list=PLGhiyR9qzFdTi-iYxv2hOMm-JiSrSxTfV', False)
 
 # Bashar Explains The Vibration Shift Unlocking New Dimensions For Total Freedom | Bashar Channeling
-download_youtube_video('https://www.youtube.com/watch?v=sKHkx8VqWAw', False)
+# download_youtube_video('https://www.youtube.com/watch?v=sKHkx8VqWAw', False)
